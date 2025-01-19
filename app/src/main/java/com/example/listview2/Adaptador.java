@@ -9,6 +9,8 @@ import android.widget.BaseAdapter;
 import java.util.ArrayList;
 
 public abstract class Adaptador extends BaseAdapter {
+
+
     private ArrayList<?> entradas;
     private int R_layout_IdView;
     private Context contexto;
@@ -38,8 +40,8 @@ public abstract class Adaptador extends BaseAdapter {
 
     public View getView(int posicion, View view, ViewGroup parent) {
         if (view == null) {
-            LayoutInflater vi = (LayoutInflater)
-                    contexto.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater vi = (LayoutInflater) contexto.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = vi.inflate(R_layout_IdView, parent, false);
         }
         onEntrada(entradas.get(posicion), view);
         return view;
